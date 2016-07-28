@@ -1,0 +1,245 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building simple-service 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ persistant ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/mikaelb/private/jersey-json-bug/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ persistant ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ persistant ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/mikaelb/private/jersey-json-bug/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ persistant ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ persistant ---
+[INFO] Surefire report directory: /home/mikaelb/private/jersey-json-bug/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.valhallagame.persistantbug.BugTrigger
+Jul 28, 2016 8:48:57 PM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [localhost:1234]
+Jul 28, 2016 8:48:57 PM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer] Started.
+Jul 28, 2016 8:48:57 PM org.glassfish.jersey.internal.Errors logErrors
+WARNING: The following warnings have been detected: WARNING: HK2 failure has been detected in a code that does not run in an active Jersey Error scope.
+WARNING: Unknown HK2 failure detected:
+MultiException stack 1 of 1
+java.lang.NullPointerException
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory$1.transform(ServerProcessingBinder.java:154)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory$1.transform(ServerProcessingBinder.java:151)
+	at org.glassfish.jersey.internal.inject.ReferenceTransformingFactory.provide(ReferenceTransformingFactory.java:92)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory.provide(ServerProcessingBinder.java:162)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory.provide(ServerProcessingBinder.java:146)
+	at org.jvnet.hk2.internal.FactoryCreator.create(FactoryCreator.java:153)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.glassfish.jersey.process.internal.RequestScope.findOrCreate(RequestScope.java:162)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:692)
+	at org.jvnet.hk2.internal.ThreeThirtyResolver.resolve(ThreeThirtyResolver.java:78)
+	at org.jvnet.hk2.internal.ClazzCreator.resolve(ClazzCreator.java:211)
+	at org.jvnet.hk2.internal.ClazzCreator.resolveAllDependencies(ClazzCreator.java:228)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:357)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:88)
+	at org.jvnet.hk2.internal.FactoryCreator.dispose(FactoryCreator.java:175)
+	at org.jvnet.hk2.internal.SystemDescriptor.dispose(SystemDescriptor.java:526)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.remove(RequestScope.java:532)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.release(RequestScope.java:549)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:319)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+Jul 28, 2016 8:48:57 PM org.glassfish.jersey.internal.Errors logErrors
+WARNING: The following warnings have been detected: WARNING: HK2 failure has been detected in a code that does not run in an active Jersey Error scope.
+WARNING: Unknown HK2 failure detected:
+MultiException stack 1 of 3
+java.lang.NullPointerException
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory$1.transform(ServerProcessingBinder.java:154)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory$1.transform(ServerProcessingBinder.java:151)
+	at org.glassfish.jersey.internal.inject.ReferenceTransformingFactory.provide(ReferenceTransformingFactory.java:92)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory.provide(ServerProcessingBinder.java:162)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory.provide(ServerProcessingBinder.java:146)
+	at org.jvnet.hk2.internal.FactoryCreator.create(FactoryCreator.java:153)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.glassfish.jersey.process.internal.RequestScope.findOrCreate(RequestScope.java:162)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:692)
+	at org.jvnet.hk2.internal.ThreeThirtyResolver.resolve(ThreeThirtyResolver.java:78)
+	at org.jvnet.hk2.internal.ClazzCreator.resolve(ClazzCreator.java:211)
+	at org.jvnet.hk2.internal.ClazzCreator.resolveAllDependencies(ClazzCreator.java:228)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:357)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:88)
+	at org.jvnet.hk2.internal.FactoryCreator.dispose(FactoryCreator.java:175)
+	at org.jvnet.hk2.internal.SystemDescriptor.dispose(SystemDescriptor.java:526)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.remove(RequestScope.java:532)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.release(RequestScope.java:549)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:319)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:745)
+MultiException stack 2 of 3
+java.lang.IllegalArgumentException: While attempting to resolve the dependencies of com.valhallagame.persistantbug.UserFactory errors were found
+	at org.jvnet.hk2.internal.ClazzCreator.resolveAllDependencies(ClazzCreator.java:246)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:357)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:88)
+	at org.jvnet.hk2.internal.FactoryCreator.dispose(FactoryCreator.java:175)
+	at org.jvnet.hk2.internal.SystemDescriptor.dispose(SystemDescriptor.java:526)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.remove(RequestScope.java:532)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.release(RequestScope.java:549)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:319)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:745)
+MultiException stack 3 of 3
+java.lang.IllegalStateException: Unable to perform operation: resolve on com.valhallagame.persistantbug.UserFactory
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:386)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:88)
+	at org.jvnet.hk2.internal.FactoryCreator.dispose(FactoryCreator.java:175)
+	at org.jvnet.hk2.internal.SystemDescriptor.dispose(SystemDescriptor.java:526)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.remove(RequestScope.java:532)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.release(RequestScope.java:549)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:319)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+Jul 28, 2016 8:48:57 PM org.glassfish.jersey.internal.Errors logErrors
+WARNING: The following warnings have been detected: WARNING: HK2 failure has been detected in a code that does not run in an active Jersey Error scope.
+WARNING: Unknown HK2 failure detected:
+MultiException stack 1 of 3
+java.lang.NullPointerException
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory$1.transform(ServerProcessingBinder.java:154)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory$1.transform(ServerProcessingBinder.java:151)
+	at org.glassfish.jersey.internal.inject.ReferenceTransformingFactory.provide(ReferenceTransformingFactory.java:92)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory.provide(ServerProcessingBinder.java:162)
+	at org.glassfish.jersey.server.internal.process.ServerProcessingBinder$ContainerRequestFactory.provide(ServerProcessingBinder.java:146)
+	at org.jvnet.hk2.internal.FactoryCreator.create(FactoryCreator.java:153)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.glassfish.jersey.process.internal.RequestScope.findOrCreate(RequestScope.java:162)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:692)
+	at org.jvnet.hk2.internal.ThreeThirtyResolver.resolve(ThreeThirtyResolver.java:78)
+	at org.jvnet.hk2.internal.ClazzCreator.resolve(ClazzCreator.java:211)
+	at org.jvnet.hk2.internal.ClazzCreator.resolveAllDependencies(ClazzCreator.java:228)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:357)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:88)
+	at org.jvnet.hk2.internal.FactoryCreator.dispose(FactoryCreator.java:175)
+	at org.jvnet.hk2.internal.SystemDescriptor.dispose(SystemDescriptor.java:526)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.remove(RequestScope.java:532)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.release(RequestScope.java:549)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:319)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:745)
+MultiException stack 2 of 3
+java.lang.IllegalArgumentException: While attempting to resolve the dependencies of com.valhallagame.persistantbug.UserFactory errors were found
+	at org.jvnet.hk2.internal.ClazzCreator.resolveAllDependencies(ClazzCreator.java:246)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:357)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:88)
+	at org.jvnet.hk2.internal.FactoryCreator.dispose(FactoryCreator.java:175)
+	at org.jvnet.hk2.internal.SystemDescriptor.dispose(SystemDescriptor.java:526)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.remove(RequestScope.java:532)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.release(RequestScope.java:549)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:319)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:745)
+MultiException stack 3 of 3
+java.lang.IllegalStateException: Unable to perform operation: resolve on com.valhallagame.persistantbug.UserFactory
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:386)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:471)
+	at org.jvnet.hk2.internal.PerLookupContext.findOrCreate(PerLookupContext.java:70)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:114)
+	at org.jvnet.hk2.internal.ServiceHandleImpl.getService(ServiceHandleImpl.java:88)
+	at org.jvnet.hk2.internal.FactoryCreator.dispose(FactoryCreator.java:175)
+	at org.jvnet.hk2.internal.SystemDescriptor.dispose(SystemDescriptor.java:526)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.remove(RequestScope.java:532)
+	at org.glassfish.jersey.process.internal.RequestScope$Instance.release(RequestScope.java:549)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:319)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:591)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:571)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+Jul 28, 2016 8:48:57 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
+INFO: Stopped listener bound to [localhost:1234]
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.738 sec - in com.valhallagame.persistantbug.BugTrigger
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.563 s
+[INFO] Finished at: 2016-07-28T20:48:57+02:00
+[INFO] Final Memory: 11M/303M
+[INFO] ------------------------------------------------------------------------
